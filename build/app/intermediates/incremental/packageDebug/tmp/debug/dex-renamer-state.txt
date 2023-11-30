@@ -1,0 +1,4 @@
+#Fri Nov 03 09:13:38 CET 2023
+base.0=/home/martaacampa/Desktop/PAE/questionari_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
