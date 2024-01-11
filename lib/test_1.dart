@@ -35,7 +35,7 @@ class _Test1State extends State<Test1> {
   ];
   List<String> options_Q5 = <String>[
     'Educación primaria (Grado Escolar)',
-    'Esducación SEcundaria Obligatoria (Instituto)',
+    'Esducación Secundaria Obligatoria (Instituto)',
     'Bachillerato/Formación profesional (ciclo formativo)',
     'Licenciatura/grado universitario',
     'Máster/Doctorado',

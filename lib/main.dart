@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'proyecto reborn',
       theme: ThemeData(
         primaryColor: Colors.greenAccent, // Color principal de la aplicación

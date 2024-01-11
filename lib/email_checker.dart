@@ -26,19 +26,20 @@ class EmailChecker extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center, 
           crossAxisAlignment: CrossAxisAlignment.center, 
           children: <Widget>[
+            Text("Identifícate con tu correo electrónico", style: TextStyle(fontSize: 20),),
             Container(
               margin: EdgeInsets.all(50),
               child: TextField(
                 controller: emailController,
-                decoration: const InputDecoration(labelText: 'ejemplo@gmail.com',)  
+                decoration: const InputDecoration(labelText: 'tucorreo@gmail.com',)  
               ),
             ),
             const SizedBox(height: 30,),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 60, 56, 71), 
+                backgroundColor: Colors.deepPurple, 
                 elevation: 0,
-                padding: EdgeInsets.only(left: 40, right: 40, top: 15, bottom: 15),
+                padding: EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20),
               ),
               onPressed: () {
                 Navigator.push(
@@ -47,7 +48,7 @@ class EmailChecker extends StatelessWidget {
                 );  
                 print(emailController.text);
               },
-              child: const Text('Validar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400)),
+              child: const Text('Validar', style: TextStyle(color: Colors.white,)),
             ),
           ]
         )

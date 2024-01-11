@@ -15,34 +15,42 @@ class Welcome extends StatelessWidget {
     return Scaffold(
         body: Center(
           child: Container(
-            margin: const EdgeInsets.all(30.0),
+            color: Color.fromARGB(255, 203, 166, 240),
+            padding: const EdgeInsets.all(30.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center, 
               crossAxisAlignment: CrossAxisAlignment.center, 
               children: <Widget>[
                 const Text('Bienvenido al proyecto',
-                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w300),
+                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
                 ),
-                const Text('R E B O R N',
-                  style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 99, 50, 212)),
-                ),
-                const SizedBox(height: 20,),
-                Container(
-                  padding:EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 203, 166, 240),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: const Text( 'Esta investigación busca estudiar el conocimiento y percepción de riesgo en relación con la exposición al RADÓN en nuestra sociedad.',
-                    textAlign: TextAlign.center, style: TextStyle(color: Color.fromARGB(255, 63, 63, 63), fontSize: 15, fontWeight: FontWeight.w600),
-                  ),
+                const Text('R A D O N C O M',
+                  style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 const SizedBox(height: 40.0),
                 Image.asset('assets/images/radon.png', scale: 5,),
+                const SizedBox(height: 20,),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.deepPurple,
+                        spreadRadius: 0,
+                        blurRadius: 1,
+                        offset: Offset(7, 7), // changes position of shadow
+                      ),
+                    ], //B
+                  ),
+                  padding:EdgeInsets.all(20),
+                  child: const Text( 'Esta investigación busca estudiar el conocimiento y percepción de riesgo en relación con la exposición al RADÓN en nuestra sociedad.',
+                  textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontSize: 16, ),
+                  ),
+                ),
                 const SizedBox(height: 40.0),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 60, 56, 71), 
+                    backgroundColor: Colors.deepPurple, 
                     elevation: 0,
                     padding: EdgeInsets.all(20),
                   ),
@@ -52,12 +60,12 @@ class Welcome extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EmailChecker()),
                     );
                   }, 
-                  child: const Text('Ir al questionario', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),), 
+                  child: const Text('IR AL CUESTIONARIO', style: TextStyle(color: Colors.white, ),), 
                 ),
                 const SizedBox(height: 15.0),
                 TextButton(
                   onPressed: doNothing,
-                  child: const Text('¡Ya he participado!', style: TextStyle(color: Colors.blueGrey)),
+                  child: const Text('¡Ya he participado!', style: TextStyle(color: Colors.white)),
                 )          
               ],
             ),

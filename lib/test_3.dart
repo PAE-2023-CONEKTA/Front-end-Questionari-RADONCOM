@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'test_4.dart';
 
 
 class Test3 extends StatefulWidget {
@@ -20,6 +21,32 @@ class _Test3State extends State<Test3> {
   bool otherStatusIsChecked = false;
 
   DateTime startWorkingDate = DateTime.now();
+
+  List<String> options_Q12 = <String>[
+    'Agricultura, plantaciones, otros sectores rurales',
+    'Producción de metales básicos',
+    'Industrias químicas',
+    'Comercio',
+    'Alimentación, bebidas, tabaco',
+    'Silvicultura, madera, pasta y papel',
+    'Servicios sanitarios',
+    'Hostelería, turismo, restauración',
+    'Minería (carbón, otras minas)',
+    'Ingeniería mecánica y eléctrica',
+    'Medios de comunicación, cultura, gráficos',
+    'Producción de petróleo y gas',
+    'Servicios postales y de telecomunicaciones',
+    'Servicios públicos',
+    'Transporte marítimo/Puertos/Pesca/Vías navegables interiores',
+    'Textil, confección, cuero, calzado',
+    'Transporte (incluida la aviación civil, el ferrocarril y el transporte por carretera)',
+    'Fabricación de equipos de transporte',
+    'Servicios públicos (agua, gas, electricidad)',
+    'Construcción',
+    'Educación',
+    'Servicios financieros y profesionales',
+    'Prefiero no responder'
+  ];
 
 
   @override
@@ -114,14 +141,66 @@ class _Test3State extends State<Test3> {
                       style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
                     ),
                     SizedBox(height: 10,),
-                    /*YearPicker(firstDate: DateTime(2000), lastDate: DateTime.now(), selectedDate: startWorkingDate, onChanged:(value) => setState(() {
-                      startWorkingDate = value;
-                    }),)*/
+                    Row(
+                      children: [
+                        Text("Año inicio"),
+                        SizedBox(width: 10,),
+                        Flexible(child: TextField()),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Row(
+                      children: [
+                        Text("Año fin/continúo trabajando"),
+                        SizedBox(width: 10,),
+                        Flexible(child: TextField()),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Row(
+                      children: [
+                        Text("Tipo de trabajo"),
+                        SizedBox(width: 10,),
+                        Flexible(child: TextField()),
+                      ],
+                    )
                   ]
                 )
               ),
+              const SizedBox(height: 20),
+              Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 245, 244, 244), 
+                  borderRadius: BorderRadius.circular(15),
+                  
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      '¿En qué sector está su profesión actual, o previa si ya no trabaja? Seleccione la que mejor se ajuste:',
+                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                    ),
+                    SizedBox(height: 10,),
+                    DropdownButtonFormField(
+                      items: options_Q12.map((e) {
+                        return DropdownMenuItem(child: Text(e), value: e);
+                      }).toList(),
+                      onChanged: (String? value) {},
+                      isDense: true,
+                      isExpanded: true,
+                      decoration: InputDecoration(
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey), // Change color when selected
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+              ),
               SizedBox(height: 50,),
-              /*Container(
+              Container(
                 alignment: Alignment.center,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -132,12 +211,12 @@ class _Test3State extends State<Test3> {
                   onPressed: () {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Test2()),
+                    MaterialPageRoute(builder: (context) => Test4()),
                   );  
                   },
                   child: const Text('Continuar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400)),
                 ),
-              ),*/
+              ),
             ],
           ),
         ),

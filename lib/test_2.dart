@@ -12,7 +12,7 @@ class Test2 extends StatefulWidget {
 class _Test2State extends State<Test2> {
   TextEditingController emailController = TextEditingController();
   List<String> siNo = <String>[
-    'Si',
+    'Sí',
     'No',
   ];
 
@@ -86,7 +86,7 @@ class _Test2State extends State<Test2> {
                         return DropdownMenuItem(child: Text(e), value: e);
                       }).toList(),
                        onChanged: (String? value) {
-                      if (value == 'Si') {
+                      if (value == 'Sí') {
                         setState(() {
                           smoke = 0;
                           previousSmoker = 3;
